@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Readit</title>
+    <link rel="stylesheet" href="../bower_components/bulma/css/bulma.css">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+    <style media="screen">
+        html, body, webview {
+            height: 100%;
+        }
+    </style>
+  </head>
+  <body>
+    <section id="loader" class="hero is-fullheight has-text-centered">
+        <div class="hero-body">
+            <div class="container">
+                <div class="busy">
+                    <h1 class="title">
+                        <span class="icon is-large">
+                            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i>
+                        </span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <webview id="reader" src="about:blank"></webview>
+  </body>
+
+  <script>
+    // jQuery
+    $ = require('jquery')
+    const queryString = require('query-string')
+
+    const queryParams = queryString.parse(location.search)
+
+    let url = decodeURIComponent(queryParams.url)
+    
+    $('#reader').one('dom-ready', (e) => {
+        e.currentTarget.loadURL(url)
+    }).one('did-finish-load', () => {
+        $('#loader').fadeOut(100)
+    })
+  </script>
+</html>

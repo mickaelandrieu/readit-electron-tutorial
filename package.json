@@ -1,0 +1,26 @@
+{
+  "name": "Readit (tutorial Udemy project)",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "homepage": "https://github.com/mickaelandrieu/readit",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Mickaël Andrieu",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "jquery": "^3.2.1",
+    "query-string": "^4.3.4",
+    "valid-url": "^1.0.9"
+  }
+}
